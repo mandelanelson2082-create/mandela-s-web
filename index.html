@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandela | Web Developer</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #e0e0e0;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      background-color: #111827;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: chartreuse;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: aqua;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: chartreuse;
+    }
+
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: aqua;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #about, #contact {
+      background-color: #1f2937;
+    }
+
+    #projects {
+      background-color: #0d1117;
+    }
+
+    h2 {
+      color: chartreuse;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      width: 80%;
+      margin: 0 auto 30px auto;
+    }
+
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .project-gallery img {
+      width: 280px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      border: 2px solid chartreuse;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #0d1117;
+      color: white;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      background-color: brown;
+      color: aqua;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: darkred;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #111827;
+      padding: 20px;
+      color: gray;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: aqua;
+      text-decoration: none;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #111827;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+      p {
+        width: 95%;
+      }
+
+      input, textarea {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mandela's Website</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="#about" onclick="toggleMenu()">About Me</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm <strong>Mandela</strong>, a passionate and dedicated web developer. I enjoy creating clean, modern, and responsive websites using HTML, CSS, and JavaScript. My goal is to design solutions that are both beautiful and user-friendly.</p>
+    <img src="Nelson mandela.webp" alt="Mandela" width="300" height="400" style="border-radius:15px;">
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>Here are a few of my recent works showcasing my creativity and technical skills.</p>
+    <div class="project-gallery">
+      <img src="images.jfif" alt="Project 1">
+      <img src="public seal.jfif" alt="Project 2">
+      <img src="Nelson mandela.webp" alt="Project 3">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>I’d love to hear from you! Whether it’s feedback, a collaboration, or a new project idea — feel free to reach out below.</p>
+    
+    <!-- Feedback Form -->
+    <form action="https://formsubmit.co/mandelanelson2082@gmail.com" method="POST">
+      <!-- Hidden options -->
+      <input type="hidden" name="_subject" value="New Feedback from Your Website!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <!-- Visible fields -->
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Kindly provide your feedback here..." required></textarea>
+      <button type="submit">Send Feedback</button>
+    </form>
+
+    <p style="margin-top:20px;">📧 Email: <a href="mailto:mandelanelson2082@gmail.com">mandelanelson2082@gmail.com</a></p>
+    <p>📞 Phone: <a href="tel:+254714560047">+254 714 560047</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Mandela | All Rights Reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
